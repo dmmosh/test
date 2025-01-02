@@ -10,11 +10,21 @@ void setup() {
     pinMode(GREEN,OUTPUT);
     pinMode(BLUE,OUTPUT);
 
-    analogWrite(RED, 255);
-    analogWrite(BLUE, 220);
-    analogWrite(RED,104);
 }
 
+
+uint8_t r = 0;
+uint8_t g = 0;
+uint8_t b = 0;
 void loop() {
-  // put your main code here, to run repeatedly:
+    analogWrite(RED, r);
+    analogWrite(GREEN,g);
+    analogWrite(BLUE, b);
+
+    r++;
+    g++;
+    b++;
+
+
+    vTaskDelay(5/portTICK_PERIOD_MS);
 }
