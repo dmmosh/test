@@ -23,6 +23,7 @@ void loop() {
     analogWrite(BLUE, b);
 
     if(r == MAX){
+        vTaskDelay(10/portTICK_PERIOD_MS);
         if(b){
             b--;
         } else {
@@ -30,7 +31,6 @@ void loop() {
         }
     } if (g == MAX){
         if(r){
-            vTaskDelay(5/portTICK_PERIOD_MS);
             r--;
         } else {
             b++;
@@ -39,8 +39,6 @@ void loop() {
         if(g){
             g--;
         } else {
-        vTaskDelay(5/portTICK_PERIOD_MS);
-
             r++;
         }
     }
