@@ -22,7 +22,7 @@ void loop() {
     analogWrite(GREEN,g);
     analogWrite(BLUE, b);
 
-    if(r==MAX && g == 0 && b == 0){
+    if(r==MAX && g < 20 && b < 20){
         vTaskDelay(500/portTICK_PERIOD_MS);
     }
 
