@@ -42,7 +42,7 @@ void loop() {
             r++;
         }
     }
-    Serial.printf("R: %i G: %i B: %i\n", r,g,b);
+    Serial.printf("R: %3i G: %3i B: %3i\n", r,g,b);
     
 
     vTaskDelay(5/portTICK_PERIOD_MS);
