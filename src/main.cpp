@@ -3,6 +3,7 @@
 #define RED 2
 #define GREEN 4
 #define BLUE 16
+#define MAX 255
 
 void setup() {
     Serial.begin(115200);
@@ -13,7 +14,7 @@ void setup() {
 }
 
 
-uint8_t r = 0;
+uint8_t r = MAX;
 uint8_t g = 0;
 uint8_t b = 0;
 void loop() {
@@ -21,10 +22,28 @@ void loop() {
     analogWrite(GREEN,g);
     analogWrite(BLUE, b);
 
-    r++;
-    g++;
-    b++;
 
+    if(r == MAX){
+        if(b){
+            b--;
+        } else {
+            g++;
+        }
+    }
+     if (g == MAX){
+        if(r){
+            r--;
+        } else {
+            b++;
+        }
+    }
+    if (b == MAX){
+        if(g){
+            g--;
+        } else {
+            r++;
+        }
+    }
 
     vTaskDelay(5/portTICK_PERIOD_MS);
 }
