@@ -23,7 +23,7 @@ void loop() {
     analogWrite(BLUE, b);
 
     if(r==MAX && g < 20 && b < 20){
-        vTaskDelay(500/portTICK_PERIOD_MS);
+        vTaskDelay(200/portTICK_PERIOD_MS);
     }
 
     if(r == MAX){
@@ -48,5 +48,5 @@ void loop() {
     Serial.printf("R: %3i G: %3i B: %3i\n", r,g,b);
     
 
-    vTaskDelay(15/portTICK_PERIOD_MS);
+    vTaskDelay(7/portTICK_PERIOD_MS);
 }
