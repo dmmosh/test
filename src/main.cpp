@@ -17,13 +17,13 @@ void setup() {
 uint8_t r = MAX;
 uint8_t g = 0;
 uint8_t b = 0;
+bool red_sub = true;
 void loop() {
     analogWrite(RED, r);
     analogWrite(GREEN,g);
     analogWrite(BLUE, b);
 
     if(r == MAX){
-        vTaskDelay(10/portTICK_PERIOD_MS);
         if(b){
             b--;
         } else {
@@ -31,7 +31,12 @@ void loop() {
         }
     } if (g == MAX){
         if(r){
+            if (red_sub){
             r--;
+            red_sub = false;
+            } else {
+                red_sub = true;
+            }
         } else {
             b++;
         }
