@@ -29,13 +29,13 @@ void loop() {
         } else {
             g++;
         }
-    } else if (g == MAX){
+    } if (g == MAX){
         if(r){
             r--;
         } else {
             b++;
         }
-    } else if (b == MAX){
+    } if (b == MAX){
         if(g){
             g--;
         } else {
